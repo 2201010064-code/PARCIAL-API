@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const nombre = document.getElementById("nombre").value;
         const correo = document.getElementById("email").value;
+        const destinatario = document.getElementById("destinatario").value;
         const mensaje = document.getElementById("mensaje").value;
 
         boton.disabled = true;
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emailjs.send(SERVICE_ID, TEMPLATE_ID, {
             from_name: nombre,
             from_email: correo,
+            to_email: destinatario,
             message: mensaje
         })
         .then(function (respuesta) {
